@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'vars/colors';
+
+%gradient {
+  background-image: linear-gradient(90deg, $purple 0%, $tan 100%);
+}
+
+hr {
+  border-radius: 11px;
+  border: 0;
+  height: 6px;
+  width: 50px;
+}
+
+.gradient {
+  &,
+  &--anchor i {
+    @extend %gradient;
+  }
+
+  &--anchor {
+    text-decoration: none;
+
+    i {
+      background-size: 130% auto;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: .5s;
+
+      &:hover {
+        background-position: right center;
+      }
+    }
+  }
+}
